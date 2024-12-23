@@ -1,101 +1,341 @@
 import Image from "next/image";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="mainContainer">
+      {/* NAVIGATION */}
+      <nav className="navigation">
+        <div className="navInner container">
+          <Image src="/logo.png" alt="Logo" width={40} height={40} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="navLinks">
+            <a href="#" className="navLink">
+              The Center
+            </a>
+            <a href="#" className="navLink">
+              Services
+            </a>
+            <a href="#" className="navLink">
+              Licensing & Permits
+            </a>
+            <a href="#" className="navLink">
+              Invest
+            </a>
+            <a href="#" className="navLink">
+              Laws & Regulations
+            </a>
+            <a href="#" className="navLink">
+              Login
+            </a>
+
+            <a href="#" className="signUpLink">
+              Sign Up
+              <ArrowRightIcon className="arrowIcon" />
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </nav>
+
+      {/* HERO SECTION */}
+      <section className="heroSection">
+        <div className="heroWrapper container">
+          <div className="heroImageContainer">
+            <img
+              src="/header.jpg"
+              alt="Sustainable Energy Landscape"
+              className="heroImage"
+            />
+            <div className="heroOverlay">
+              <div className="heroContent">
+                <h1 className="heroTitle">
+                  Leading the Way in <br /> Sustainable Waste <br /> Management
+                </h1>
+                <button className="heroButton">
+                  Explore services
+                  <ArrowRightIcon className="arrowIcon" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KEY OBJECTIVES SECTION */}
+      <section className="objectivesSection container">
+        <div className="objectivesGrid">
+          <div className="objectivesLeft">
+            <h1 className="objectivesHeading">
+              National Waste Management <br /> Strategy Key objectives
+            </h1>
+
+            <div className="objectivesBlock">
+              <h2 className="objectivesSubheading">Vision</h2>
+              <p className="objectivesParagraph">
+                Leadership in organizing the waste management sector by adopting
+                circular economy principles to achieve sustainability, enhance
+                environmental protection, and improve quality of life.
+              </p>
+            </div>
+
+            <div className="objectivesBlock">
+              <h2 className="objectivesSubheading">Mission</h2>
+              <p className="objectivesParagraph">
+                To organize an attractive sector through the application of best
+                practices, technologies, and standards, while promoting
+                transparency, efficiency, compliance, digitalization, and
+                innovation.
+              </p>
+            </div>
+
+            <div className="objectivesButtonWrap">
+              <button className="learnMoreButton">
+                Learn more
+                <ArrowRightIcon className="arrowIcon" />
+              </button>
+            </div>
+          </div>
+
+          <div className="objectivesRight">
+            <div className="objectivesImageContainer">
+              <img
+                src="/waste.jpg"
+                alt="Plastic Waste"
+                className="objectivesImage"
+              />
+              <div className="objectivesStat">
+                <p className="objectivesStatCaption">We have helped reduce</p>
+                <p className="objectivesStatNumber">30%</p>
+                <div className="objectivesStatDivider" />
+                <p className="objectivesStatText">
+                  of plastic waste in Saudi Arabia
+                  <br />
+                  Since the start of 2024
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GOVERNMENT SECTION */}
+      <section className="darkSection">
+        <div className="darkSectionGrid">
+          <div className="darkSectionTextBlock">
+            <h2 className="darkSectionTitle">
+              Government: Sustainable Progress Through Policy
+            </h2>
+            <p className="darkSectionParagraph">
+              Explore MWAN's initiatives to drive sustainable waste management,
+              align with Vision 2030, and enhance environmental well-being.
+            </p>
+
+            <ul className="darkSectionList">
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Waste Management Regulations
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Licensing and Permits Platform
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Collaboration Opportunities
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="darkSectionImageWrap">
+            <img
+              src="/gov.jpg"
+              alt="Engineer Checking Plans"
+              className="darkSectionImage"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* INVESTORS SECTION */}
+      <section className="darkSection">
+        <div className="darkSectionGrid">
+          <div className="darkSectionImageWrap">
+            <img
+              src="/inv.jpg"
+              alt="Circular Infrastructure"
+              className="darkSectionImage"
+            />
+          </div>
+
+          <div className="darkSectionTextBlock">
+            <h2 className="darkSectionTitle">
+              Investors: Empowering Green Investment
+            </h2>
+            <p className="darkSectionParagraph">
+              Unlock profitable opportunities in waste management with
+              comprehensive support for sustainable growth.
+            </p>
+
+            <ul className="darkSectionList">
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Investment Opportunities
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Investment Creation Requirements
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Master Plan
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* EDUCATION & YOUTH SECTION */}
+      <section className="darkSection">
+        <div className="darkSectionGrid">
+          <div className="darkSectionTextBlock reorder">
+            <h2 className="darkSectionTitle">
+              Education &amp; Youth: Building a Sustainable Future
+            </h2>
+            <p className="darkSectionParagraph">
+              Inspire youth and schools to embrace waste reduction with
+              resources for innovation and awareness.
+            </p>
+
+            <ul className="darkSectionList">
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Educational Workshops
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Awareness Campaigns
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="darkSectionLink">
+                  Research Collaboration
+                  <ArrowRightIcon className="arrowIcon" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="darkSectionImageWrap reorderImg">
+            <img
+              src="/edu.jpg"
+              alt="Woman Planting a Sapling"
+              className="darkSectionImage"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* NEWS SECTION */}
+      <section className="newsSection container">
+        <h2 className="newsHeading">News</h2>
+
+        <div className="newsGrid">
+          {/* News Item 1 */}
+          <div className="newsItem">
+            <img
+              src="/news1.jpg"
+              alt="MWAN Financial Merit Award"
+              className="newsImage"
+            />
+            <p className="newsDate">17 December, 2024</p>
+            <h3 className="newsTitle">
+              MWAN receives the 2024 Financial Merit Award
+            </h3>
+            <a href="#" className="newsLink">
+              Learn more
+              <ArrowRightIcon className="arrowIcon" />
+            </a>
+          </div>
+
+          {/* News Item 2 */}
+          <div className="newsItem">
+            <img
+              src="/news2.jpg"
+              alt="Urban Forum in Cairo"
+              className="newsImage"
+            />
+            <p className="newsDate">10 November, 2024</p>
+            <h3 className="newsTitle">
+              Mawan concludes its participation in the 12th Urban Forum in Cairo
+            </h3>
+            <a href="#" className="newsLink">
+              Learn more
+              <ArrowRightIcon className="arrowIcon" />
+            </a>
+          </div>
+
+          {/* News Item 3 */}
+          <div className="newsItem">
+            <img
+              src="/news3.jpg"
+              alt="Licensing Updates"
+              className="newsImage"
+            />
+            <p className="newsDate">31 October, 2024</p>
+            <h3 className="newsTitle">
+              Mawan announces updates to the licensing and permits system
+            </h3>
+            <a href="#" className="newsLink">
+              Learn more
+              <ArrowRightIcon className="arrowIcon" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="ctaSection">
+        <div className="ctaWrapper container">
+          <div className="ctaImageContainer">
+            <img src="/cta.jpg" alt="Sustainable Future" className="ctaImage" />
+            <div className="ctaOverlay">
+              <div className="ctaContent">
+                <h2 className="ctaHeading">
+                  Join us in building a sustainable future <br />
+                  where waste is a valuable resource.
+                </h2>
+                <p className="ctaParagraph">
+                  Take control of your future, help us build a sustainable{" "}
+                  <br />
+                  future and see your investment grow.
+                </p>
+                <div className="ctaButtons">
+                  <button className="ctaButtonLight">
+                    Explore services
+                    <ArrowRightIcon className="arrowIcon" />
+                  </button>
+                  <button className="ctaButtonBorder">Contact Us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

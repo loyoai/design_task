@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +18,478 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* ------------------------------------------
+          GLOBAL WRAPPERS & UTILITIES
+        --------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainContainer {
+  width: 100%;
+  font-family: sans-serif;
+}
+/* Reusable container to mimic Tailwind's max-w-7xl and px-6 */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* Hide default list styles */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* Arrow icon sizing */
+.arrowIcon {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* ------------------------------------------
+          NAVIGATION
+        --------------------------------------------- */
+.navigation {
+  background-color: #ffffff;
+  margin: 30px auto;
+  border-radius: 4px;
+  max-width: 1280px;
+}
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+}
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Tailwind gap-8 => 2rem => 32px */
+}
+.navLink {
+  text-decoration: none;
+  color: #4b5563; /* gray-700 */
+  transition: color 0.2s ease;
+}
+.navLink:hover {
+  color: #009d4f;
+}
+.signUpLink {
+  background-color: #009d4f;
+  padding: 12px 16px; /* py-3 px-4 */
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 140px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.signUpLink:hover {
+  background-color: #007a3c;
+}
+
+/* ------------------------------------------
+          HERO SECTION
+        --------------------------------------------- */
+.heroSection {
+  margin-bottom: 0px;
+}
+.heroWrapper {
+  position: relative;
+}
+.heroImageContainer {
+  position: relative;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heroContent {
+  max-width: 600px; /* ~tailwind max-w-2xl => 42rem */
+  padding: 0 60px;
+}
+.heroTitle {
+  margin-bottom: 32px;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff;
+}
+.heroButton {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: #065f46; /* dark greenish shade */
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.heroButton:hover {
+  background-color: #f3f4f6;
+}
+
+/* ------------------------------------------
+          OBJECTIVES SECTION
+        --------------------------------------------- */
+.objectivesSection {
+  padding: 60px 0; /* py-12 => 3rem => 48px; md:py-20 => 5rem => 80px, can be adjusted */
+}
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .objectivesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.objectivesLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.objectivesHeading {
+  font-size: 30px;
+  font-weight: 400;
+  color: #009d4f;
+  line-height: 1.3;
+}
+.objectivesBlock {
+  margin-top: 24px;
+}
+.objectivesSubheading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #009d4f;
+}
+.objectivesParagraph {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+.objectivesButtonWrap {
+  margin-top: 32px;
+}
+.learnMoreButton {
+  background-color: #009d4f;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.learnMoreButton:hover {
+  background-color: #007a3c;
+}
+.objectivesRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.objectivesImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+.objectivesImage {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+.objectivesStat {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  width: 150px;
+  background-image: url("/stat.png");
+  background-size: cover;
+  background-position: center;
+  padding: 12px 16px;
+  color: #ffffff;
+  border-radius: 8px;
+}
+.objectivesStatCaption {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #5dbdf0;
+}
+.objectivesStatNumber {
+  font-size: 48px;
+  font-weight: 700;
+  color: #5dbdf0;
+  margin: 0;
+}
+.objectivesStatDivider {
+  margin: 8px 0;
+  height: 1px;
+  background-color: #5dbdf0;
+}
+.objectivesStatText {
+  text-align: right;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* ------------------------------------------
+          DARK SECTION (Government, Investors, Education)
+        --------------------------------------------- */
+.darkSection {
+  background-color: #0f232b;
+  color: #ffffff;
+  padding: 0; /* We'll rely on .container for horizontal padding */
+}
+.darkSectionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  /* padding: 48px 0; */
+}
+@media (min-width: 768px) {
+  .darkSectionGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.darkSectionTextBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 80px;
+  /* margin-bottom: 80px; */
+}
+.darkSectionTitle {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .darkSectionTitle {
+    font-size: 28px;
+  }
+}
+.darkSectionParagraph {
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+.darkSectionList li {
+  margin-bottom: 8px;
+}
+.darkSectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  color: #22c55e; /* green-400 */
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+.darkSectionLink:hover {
+  text-decoration: underline;
+}
+.darkSectionImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.darkSectionImage {
+  width: 100%;
+  object-fit: cover;
+  max-height: 500px;
+}
+/* Reverse columns for .reverseColumns on md+ screens */
+@media (min-width: 768px) {
+  .reverseColumns {
+    grid-auto-flow: dense;
+  }
+  .reverseColumns :global(.darkSectionTextBlock) {
+    order: 2;
+  }
+  .reverseColumns :global(.darkSectionImageWrap) {
+    order: 1;
+  }
+}
+/* Education reorder specifics */
+.reorder {
+  order: 2;
+}
+.reorderImg {
+  order: 1;
+}
+@media (min-width: 768px) {
+  .reorder {
+    order: 1;
+  }
+  .reorderImg {
+    order: 2;
+  }
+}
+
+/* ------------------------------------------
+          NEWS SECTION
+        --------------------------------------------- */
+.newsSection {
+  padding: 60px 0;
+}
+.newsHeading {
+  margin-bottom: 28px;
+  font-size: 30px;
+  color: #009d4f;
+}
+.newsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .newsGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.newsItem {
+  display: flex;
+  flex-direction: column;
+}
+.newsImage {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.newsDate {
+  margin-top: 16px;
+  color: #6b7280; /* grey-500 */
+}
+.newsTitle {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #000;
+}
+.newsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #009d4f;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+.newsLink:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------
+          CTA SECTION
+        --------------------------------------------- */
+.ctaSection {
+  margin-bottom: 60px;
+}
+.ctaWrapper {
+  position: relative;
+}
+.ctaImageContainer {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.ctaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ctaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ctaContent {
+  text-align: center;
+  color: #ffffff;
+  max-width: 700px;
+  padding: 0 24px;
+}
+.ctaHeading {
+  margin-bottom: 16px;
+  font-size: 38px;
+  line-height: 1.2;
+}
+.ctaParagraph {
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ctaButtonLight {
+  background-color: #ffffff;
+  color: #065f46;
+  padding: 16px 20px;
+  font-weight: 600;
+  width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.ctaButtonLight:hover {
+  background-color: #f3f4f6;
+}
+.ctaButtonBorder {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 16px 20px;
+  font-weight: 600;
+  width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.ctaButtonBorder:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
